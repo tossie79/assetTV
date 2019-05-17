@@ -19,6 +19,7 @@ interface ProcessFileInterface
     public function setStoragePath(string $path);
     public function getFileDetails(UploadedFile $file):string;
     public function getStorageDestinationPath():string;
+    public function getPublicDestinationPath():string;
     public function getUploadedFilePath(string $file_name):string;
 	
 

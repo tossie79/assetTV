@@ -26,7 +26,7 @@ class ProcessVideoFile implements ProcessFileInterface
     public function __construct()
     {
       
-        $this->setStoragePath('/app/videos');
+        $this->setStoragePath('/app/public/videos');
        
     }
 
@@ -69,9 +69,19 @@ class ProcessVideoFile implements ProcessFileInterface
     *
     *
     **/
+
+    public function getPublicDestinationPath():string
+    {
+        return rtrim(app()->basePath('public/' . $this->storagePath), '/');
+               
+    }
+    /**
+    *
+    *
+    **/
     public function getUploadedFilePath(string $file_name):string
     {
-        $uploadedFile_withPath = $this->getStorageDestinationPath().'/'.$file_name;  
+        $uploadedFile_withPath = $this->getStorageDestinationPath().DIRECTORY_SEPARATOR .$file_name;  
         return $uploadedFile_withPath;
     }
 
