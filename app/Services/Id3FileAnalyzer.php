@@ -58,7 +58,7 @@ class Id3FileAnalyzer implements FileAnalyzerInterface
     *
     *
     **/
-    public function utf8ize($mixed ) {
+    public function utf8ize($mixed) {
         if (is_array($mixed)) {
             foreach ($mixed as $key => $value) {
                 $mixed[$key] = $this->utf8ize($value);
